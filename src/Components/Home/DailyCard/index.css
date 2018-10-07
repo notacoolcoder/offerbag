@@ -1,0 +1,9 @@
+.DailyCard-main {
+  width: 43%;
+  height: 200px;
+  border: 1px solid #7fffd4;
+  border-radius: 5px;
+  margin: 5px;
+  color: #4ac99d;
+  padding: 5px;
+}

@@ -1,0 +1,9 @@
+.appbar-main {
+  height: 50px;
+  background-color: #4ac99d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: white;
+}

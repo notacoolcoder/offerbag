@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./index.css";
-import Card from "./DailyCard";
-import ProductModel1 from "../ProductModel1";
+
+import CommonCard from "../CommonCard";
 import moment from "moment";
 
 const data = {
@@ -55,18 +55,18 @@ export default class index extends Component {
           flexWrap: "wrap"
         }}
       >
-        <ProductModel1
+        <CommonCard
           title="Up to 30% off"
           description="From Formula1From"
           url="http://dl.flipkart.com/dl/automotive/accessories-spare-parts/car-bike-care/pr?p%5B%5D=facets.brand%255B%255D%3DFormula%2B1&p%5B%5D=facets.brand%255B%255D%3DFormula1&sid=0hx%2Cbwd%2Cbyn&filterNone=true&affid=keshav"
           imageurl="https://rukminim1.flixcart.com/image/800/800/scratch-remover-wax/a/h/v/formula-1-227-scratch-out-original-imae3728msy6fh4v.jpeg?q=90"
         />
         {this.state.data.dotdList.map(item => (
-          <ProductModel1
+          <CommonCard
             title={item.title}
             description={item.description}
             url={item.url}
-            imageurl={item.imageUrls}
+            imageurl={item.imageUrls[0].url}
             time={moment()
               .endOf("day")
               .fromNow()}

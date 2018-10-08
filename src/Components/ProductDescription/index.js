@@ -10,7 +10,9 @@ export default class index extends Component {
       title: "Product Name",
       description:
         "hello this is the product description hello this is the product hello this is the product description",
-      timeleft: "2 days"
+      timeleft: "2 days",
+      imageurl: demo,
+      url: "http://www.google.com"
     };
   }
   render() {
@@ -20,7 +22,7 @@ export default class index extends Component {
         <div className="product-image">
           <img
             style={{ width: "100%", height: "245px", position: "relative" }}
-            src={demo}
+            src={this.state.imageurl}
           />
           <img
             src={Company}
@@ -99,21 +101,27 @@ export default class index extends Component {
           >
             {this.state.description}
           </div>
-          <div
-            style={{
-              width: "100%",
-              height: "40px",
-              marginTop: "30px",
-              color: "white",
-              backgroundColor: "#4AC99D",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              borderRadius: "5px"
-            }}
+          <a
+            target="_blank"
+            href={this.state.url}
+            style={{ color: "white", textDecoration: "none" }}
           >
-            Buy Now
-          </div>
+            <div
+              style={{
+                width: "100%",
+                height: "40px",
+                marginTop: "30px",
+                color: "white",
+                backgroundColor: "#4AC99D",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: "5px"
+              }}
+            >
+              Buy Now
+            </div>
+          </a>
         </div>
       </div>
     );

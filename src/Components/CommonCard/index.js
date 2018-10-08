@@ -59,7 +59,7 @@ export default class index extends Component {
               alignItems: "center",
               justifyContent: "center",
               textAlign: "center",
-              color: "#000",
+
               width: "45%",
               height: "27px",
 
@@ -83,8 +83,8 @@ export default class index extends Component {
           style={{
             fontSize: "14px",
             width: "100%",
-            height: "20px",
-
+            minHeight: "20px",
+            height: "auto",
             color: "#4AC99D",
 
             fontWeight: "bolder",

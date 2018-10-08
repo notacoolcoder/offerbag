@@ -3,6 +3,7 @@ import "./index.css";
 
 import CommonCard from "../CommonCard";
 import moment from "moment";
+import { dealOfTheDay, headers } from "../../Utils/config";
 
 const data = {
   dotdList: [
@@ -41,8 +42,25 @@ export default class index extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: data
+      data: []
     };
+  }
+
+  componentDidMount() {
+    var that = this;
+    fetch(dealOfTheDay)
+      .then(res => {
+        console.log("res", res);
+
+        return res.json();
+      })
+      .then(data => {
+        console.log("data", data);
+        that.setState({ data: data.dotdList });
+      })
+      .catch(err => {
+        console.log("err", err);
+      });
   }
   render() {
     return (
@@ -55,7 +73,7 @@ export default class index extends Component {
           flexWrap: "wrap"
         }}
       >
-        {this.state.data.dotdList.map(item => (
+        {this.state.data.map(item => (
           <CommonCard
             title={item.title}
             description={item.description}

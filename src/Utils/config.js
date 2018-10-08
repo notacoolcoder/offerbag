@@ -9,3 +9,13 @@ var config = {
 };
 firebase.initializeApp(config);
 export const db = firebase.database();
+
+export const dealOfTheDay = "http://tweeter-cj.herokuapp.com/dod";
+export const allOffers =
+  "https://affiliate-api.flipkart.net/affiliate/offers/v1/all/json";
+
+export const headers = {
+  "Fk-Affiliate-Id": "akshaycj9",
+  "Fk-Affiliate-Token": "bc9bda6792c8476e8617609de3d86afd",
+  "Content-Type": "application/json; charset=utf-8"
+};

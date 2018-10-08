@@ -105,7 +105,10 @@ export default class index extends Component {
           >
             <a
               href={this.props.url}
-              style={{ textDecoration: "none", color: "#4AC99D" }}
+              style={{
+                textDecoration: "none",
+                color: "#4AC99D"
+              }}
             >
               Buy Now
             </a>

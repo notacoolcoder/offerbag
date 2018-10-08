@@ -55,12 +55,6 @@ export default class index extends Component {
           flexWrap: "wrap"
         }}
       >
-        <CommonCard
-          title="Up to 30% off"
-          description="From Formula1From"
-          url="http://dl.flipkart.com/dl/automotive/accessories-spare-parts/car-bike-care/pr?p%5B%5D=facets.brand%255B%255D%3DFormula%2B1&p%5B%5D=facets.brand%255B%255D%3DFormula1&sid=0hx%2Cbwd%2Cbyn&filterNone=true&affid=keshav"
-          imageurl="https://rukminim1.flixcart.com/image/800/800/scratch-remover-wax/a/h/v/formula-1-227-scratch-out-original-imae3728msy6fh4v.jpeg?q=90"
-        />
         {this.state.data.dotdList.map(item => (
           <CommonCard
             title={item.title}

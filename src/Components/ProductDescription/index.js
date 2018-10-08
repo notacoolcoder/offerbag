@@ -4,10 +4,19 @@ import { Carousel, Input } from "antd";
 import demo from "../../Res/demo.jpeg";
 import Company from "../../Res/images.png";
 export default class index extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: "Product Name",
+      description:
+        "hello this is the product description hello this is the product hello this is the product description",
+      timeleft: "2 days"
+    };
+  }
   render() {
     return (
       <div className="common-body" style={{ padding: "5px" }}>
-        <h3 style={{ textAlign: "center" }}>Product Name</h3>
+        <h3 style={{ textAlign: "center" }}>{this.state.title}</h3>
         <div className="product-image">
           <img
             style={{ width: "100%", height: "245px", position: "relative" }}
@@ -19,17 +28,21 @@ export default class index extends Component {
           />
           <div
             style={{
-              width: "50%",
+              fontSize: "18px",
+              fontWeight: "bolder",
+              width: "100%",
               height: "47px",
               position: "relative",
               top: "-49px",
               textAlign: "center",
+              alignItems: "center",
               backgroundColor: "#51665E",
-              color: "white"
+              color: "white",
+              display: "flex",
+              justifyContent: "center"
             }}
           >
-            <div>Price</div>
-            <div>500rs</div>
+            {this.state.timeleft}
           </div>
           <div
             style={{
@@ -40,7 +53,8 @@ export default class index extends Component {
               left: "50%",
               textAlign: "center",
               backgroundColor: "#4AC99D",
-              color: "white"
+              color: "white",
+              display: "none"
             }}
           >
             <div>Deal Price</div>
@@ -59,7 +73,8 @@ export default class index extends Component {
               top: "-396px",
               left: "78%",
               color: "white",
-              fontWeight: "bolder"
+              fontWeight: "bolder",
+              display: "none"
             }}
           >
             40%
@@ -82,8 +97,7 @@ export default class index extends Component {
               margin: "auto"
             }}
           >
-            hello this is the product description hello this is the product
-            description hello this is the product description
+            {this.state.description}
           </div>
           <div
             style={{

@@ -1,15 +1,17 @@
 .ProductCard1-main {
-  width: 43%;
+  width: 45%;
   height: 280px;
 
   border-radius: 5px;
   margin: 5px;
   color: #4ac99d;
   padding: 3px;
-  border: 1px solid #00976f;
+
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.3);
+  background: white;
 }
-.ProductCard1-main:hover {
+/* .ProductCard1-main:hover {
   -webkit-box-shadow: 10px -5px 14px -14px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px -5px 14px -14px rgba(0, 0, 0, 0.75);
   box-shadow: 10px -5px 14px -14px rgba(0, 0, 0, 0.75);
-}
+} */

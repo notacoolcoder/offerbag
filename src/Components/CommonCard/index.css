@@ -1,6 +1,7 @@
 .ProductCard1-main {
   width: 45%;
-
+  min-height: 280px;
+  height: fit-content;
   border-radius: 5px;
   margin: 5px;
   color: #4ac99d;

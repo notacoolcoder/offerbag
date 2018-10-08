@@ -1,13 +1,14 @@
-.DailyCard-main {
+.ProductCard1-main {
   width: 43%;
-  height: 200px;
-  border: 1px solid #7fffd4;
+  height: 280px;
+
   border-radius: 5px;
   margin: 5px;
   color: #4ac99d;
-  padding: 5px;
+  padding: 3px;
+  border: 1px solid #00976f;
 }
-.DailyCard-main:hover {
+.ProductCard1-main:hover {
   -webkit-box-shadow: 10px -5px 14px -14px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px -5px 14px -14px rgba(0, 0, 0, 0.75);
   box-shadow: 10px -5px 14px -14px rgba(0, 0, 0, 0.75);

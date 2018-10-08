@@ -10,16 +10,19 @@ export default class index extends Component {
         <h3 style={{ textAlign: "center" }}>Product Name</h3>
         <div className="product-image">
           <img
-            style={{ width: "350px", height: "245px", position: "fixed" }}
+            style={{ width: "100%", height: "245px", position: "relative" }}
             src={demo}
           />
-          <img src={Company} style={{ width: "100px", position: "relative" }} />
+          <img
+            src={Company}
+            style={{ width: "100px", position: "relative", top: "-245px" }}
+          />
           <div
             style={{
               width: "50%",
               height: "47px",
               position: "relative",
-              top: "200px",
+              top: "-49px",
               textAlign: "center",
               backgroundColor: "#51665E",
               color: "white"
@@ -33,7 +36,7 @@ export default class index extends Component {
               width: "50%",
               height: "47px",
               position: "relative",
-              top: "153px",
+              top: "-96px",
               left: "50%",
               textAlign: "center",
               backgroundColor: "#4AC99D",
@@ -53,13 +56,49 @@ export default class index extends Component {
               alignItems: "center",
               justifyContent: "center",
               position: "relative",
-              top: "-148px",
+              top: "-396px",
               left: "78%",
               color: "white",
               fontWeight: "bolder"
             }}
           >
             40%
+          </div>
+        </div>
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: "10px",
+            fontSize: "20px",
+            color: "#51665E"
+          }}
+        >
+          <div style={{ marginBottom: "10px" }}>Product Description</div>
+          <div
+            style={{
+              fontSize: "14px",
+
+              width: "80%",
+              margin: "auto"
+            }}
+          >
+            hello this is the product description hello this is the product
+            description hello this is the product description
+          </div>
+          <div
+            style={{
+              width: "100%",
+              height: "40px",
+              marginTop: "30px",
+              color: "white",
+              backgroundColor: "#4AC99D",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: "5px"
+            }}
+          >
+            Buy Now
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../Components/Home";
 import AppBar from "../Components/AppBar";
 import ProductDescription from "../Components/ProductDescription";
-import ProductModel1 from "../Components/ProductModel1";
+import Flipkart from "../Components/FlipKart";
 export default class routes extends Component {
   render() {
     return (
@@ -11,7 +11,7 @@ export default class routes extends Component {
         <AppBar />
         <Router>
           <Switch>
-            <Route path="/product1" component={ProductModel1} />
+            <Route path="/flipkart" component={Flipkart} />
             <Route path="/product" component={ProductDescription} />
             <Route path="/" component={Home} />
           </Switch>

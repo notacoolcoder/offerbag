@@ -110,8 +110,7 @@ export default class index extends Component {
                 width: "100%",
                 display: "flex",
                 justifyContent: "center",
-                flexWrap: "wrap",
-                minWidth: "320px"
+                flexWrap: "wrap"
               }}
             >
               {this.state.empty ? (

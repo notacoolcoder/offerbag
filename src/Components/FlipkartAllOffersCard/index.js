@@ -38,24 +38,7 @@ export default class index extends Component {
           {this.props.description}
         </div>
 
-        <div
-          style={{
-            fontSize: "15px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
-
-            width: "100%",
-            height: "27px",
-            border: "1px solid #00976F",
-            padding: "1px",
-            borderRadius: "4px",
-            fontWeight: "bold",
-            color: "white",
-            backgroundColor: "#247C65"
-          }}
-        >
+        <div className="commonBuyNow">
           <a
             href={this.props.url}
             style={{

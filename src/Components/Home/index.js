@@ -58,22 +58,10 @@ export default class index extends Component {
           style={{ width: "100%", textAlign: "center" }}
         >
           <TabPane
-            tab="Deal of the Day"
+            tab="Home"
             key="1"
             style={{ display: "flex", flexWrap: "wrap" }}
-          >
-            {/* {this.state.data.map(item => (
-              <CommonCard
-                title={item.title}
-                description={item.description}
-                url={item.url}
-                imageurl={item.imageUrls[0].url}
-                time={moment()
-                  .unix(item.endTime)
-                  .fromNow()}
-              />
-            ))} */}
-          </TabPane>
+          />
           <TabPane tab="All Deals" key="2">
             <div
               style={{
@@ -99,7 +87,7 @@ export default class index extends Component {
               )}
             </div>
           </TabPane>
-          <TabPane tab="Shop by Shop" key="3">
+          {/* <TabPane tab="Shop by Shop" key="3">
             <div
               className="common-body"
               style={{
@@ -115,7 +103,7 @@ export default class index extends Component {
                 </div>
               ))}
             </div>
-          </TabPane>
+          </TabPane> */}
           <TabPane tab="Coupons" key="4">
             Content of Tab Pane 3
           </TabPane>

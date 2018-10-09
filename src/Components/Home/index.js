@@ -8,10 +8,52 @@ import { Tabs, Spin } from "antd";
 import Amazon from "../../Res/Amazon-Logo.jpg";
 import Flipkart from "../../Res/Flipkart.png";
 import FkAll from "../FlipkartAllOffersCard";
+import OfferCard from "../OfferCard";
+import Zomato from "../../Res/Zomato.jpg";
+import Swiggy from "../../Res/Swiggy.jpg";
+import Paytm from "../../Res/Paytm.png";
 
 const TabPane = Tabs.TabPane;
 
 const shops = [{ link: "/flipkart", img: Amazon }, { img: Flipkart }];
+
+const offers = [
+  {
+    logo: Zomato,
+    description: "Avail 50% OFF (up to ₹150) On Your First Order",
+    code: "NEW50"
+  },
+  {
+    logo: Paytm,
+    description: "Avail Flat ₹50 Cashback On JIO Recharge Of ₹100 or More.",
+    code: "NEWJIO"
+  },
+  {
+    logo: Swiggy,
+    description: "Avail 50% Off On Your 1st Three Swiggy Orders",
+    code: "GRAB50"
+  },
+  {
+    logo: Zomato,
+    description: "Flat 33% OFF On Your First 5 Orders",
+    code: "GET33"
+  },
+  {
+    logo: Paytm,
+    description: "Flat Rs 75 Cashback On Movie Tickets",
+    code: "TICKET75"
+  },
+  {
+    logo: Swiggy,
+    description: "Get 20% Cashback Using Paytm",
+    code: "PMTREATS"
+  },
+  {
+    logo: Zomato,
+    description: "Get 60% Off + Up to Rs.100 Cashback With Paytm",
+    code: "PAYTM60"
+  }
+];
 
 export default class index extends Component {
   constructor(props) {
@@ -105,7 +147,13 @@ export default class index extends Component {
             </div>
           </TabPane> */}
           <TabPane tab="Coupons" key="4">
-            Content of Tab Pane 3
+            {offers.map(item => (
+              <OfferCard
+                logo={item.logo}
+                description={item.description}
+                code={item.code}
+              />
+            ))}
           </TabPane>
         </Tabs>
       </div>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import CommonCard from "../CommonCard";
 import moment from "moment";
 import { dealOfTheDay, headers, allOffers } from "../../Utils/config";
-import { Tabs, Spin } from "antd";
+import { Tabs, Spin, Carousel, List, Icon } from "antd";
 import Amazon from "../../Res/Amazon-Logo.jpg";
 import Flipkart from "../../Res/Flipkart.png";
 import FkAll from "../FlipkartAllOffersCard";
@@ -12,6 +12,13 @@ import OfferCard from "../OfferCard";
 import Zomato from "../../Res/Zomato.jpg";
 import Swiggy from "../../Res/Swiggy.jpg";
 import Paytm from "../../Res/Paytm.png";
+import a from "../../Res/both.jpg";
+import b from "../../Res/billion1.jpg";
+import c from "../../Res/bigbillion.jpeg";
+import d from "../../Res/billion2.jpg";
+import e from "../../Res/GIS.jpg";
+import f from "../../Res/GIS1.jpg";
+import kfcoffer from "../../Res/kfcoffer.png";
 
 const TabPane = Tabs.TabPane;
 
@@ -54,6 +61,33 @@ const offers = [
     code: "PAYTM60"
   }
 ];
+const Sale = [
+  { img: a },
+  { img: b },
+  { img: e },
+  { img: d },
+  { img: c },
+  { img: f }
+];
+const data = [
+  {
+    description: "Valid at all KFC outlets."
+  },
+  {
+    description:
+      "Valid on 1 Chicken Zinger Burger with 2 Pieces of Chicken Hot wings & 1 7up Krush Lime Soda."
+  },
+  {
+    description:
+      "Use promocode KFC025 to get instant Rs.79 cashback and movie voucher worth Rs.100"
+  },
+  {
+    description: "Valid for 1 person and for Dine-in & Takeaway only."
+  },
+  {
+    description: "Valid till 30th October 2018."
+  }
+];
 
 export default class index extends Component {
   constructor(props) {
@@ -62,9 +96,13 @@ export default class index extends Component {
       data: [],
       empty: true,
       shops: [],
-      allOffers: []
+      allOffers: [],
+      view: true
     };
   }
+  onToggle = () => {
+    this.setState({ view: !this.state.view });
+  };
 
   componentDidMount() {
     var that = this;
@@ -102,8 +140,111 @@ export default class index extends Component {
           <TabPane
             tab="Home"
             key="1"
-            style={{ display: "flex", flexWrap: "wrap" }}
-          />
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              flexDirection: "column",
+              alignItems: "center"
+            }}
+          >
+            <div style={{ width: "360px", height: "250px" }}>
+              <Carousel autoplay>
+                {Sale.map(item => (
+                  <div>
+                    <img
+                      style={{ width: "360px", height: "250px" }}
+                      src={item.img}
+                    />
+                  </div>
+                ))}
+              </Carousel>
+            </div>
+            <div
+              style={{
+                marginTop: "10px",
+                marginBottom: "10px",
+                fontSize: "16px",
+                color: "#51665E"
+              }}
+            >
+              Exclusive deal
+            </div>
+            <div
+              style={{
+                width: "360px",
+                height: "auto",
+                padding: "10px",
+                border: "1px solid #e6e6e6",
+                borderRadius: "5px"
+              }}
+            >
+              <img style={{ width: "330px" }} src={kfcoffer} />
+              <h5>
+                KFC Chicken Zinger Combo Offer + Flat Rs.100 Movie Voucher+79
+                Cashback
+              </h5>
+              <h4>
+                <strike>Rs 179/-</strike>
+              </h4>
+              <h4 style={{ color: "red" }}>Rs 0</h4>
+              {this.state.view ? (
+                <h3
+                  style={{ color: "#4AC99D", cursor: "pointer" }}
+                  onClick={this.onToggle}
+                >
+                  Click to Get this offer
+                </h3>
+              ) : (
+                <div>
+                  <h5>Product Highlights</h5>
+                  <List
+                    style={{ fontSize: "9px" }}
+                    itemLayout="horizontal"
+                    dataSource={data}
+                    renderItem={item => (
+                      <List.Item>
+                        <List.Item.Meta description={item.description} />
+                      </List.Item>
+                    )}
+                  />
+
+                  <a
+                    style={{ textDecoration: "none", color: "white" }}
+                    href="https://paytmmall.com/shop/p/chicken-zinger-combo-DEACHICKEN-ZINGNEAR76288127A68F3D"
+                  >
+                    {" "}
+                    <div className="commonBuyNow">Buy Now</div>{" "}
+                  </a>
+                  <Icon
+                    onClick={this.onToggle}
+                    style={{
+                      marginTop: "20px",
+                      fontSize: "33px",
+                      cursor: "pointer"
+                    }}
+                    type="caret-up"
+                    theme="outlined"
+                  />
+                </div>
+              )}
+            </div>
+            <div
+              style={{
+                marginTop: "10px",
+                marginBottom: "10px",
+                fontSize: "16px",
+                color: "#51665E"
+              }}
+            >
+              Featured
+            </div>
+            <img src={c} style={{ width: "360px", height: "200px" }} />
+            <img
+              src={e}
+              style={{ width: "360px", height: "200px", marginTop: "10px" }}
+            />
+          </TabPane>
+
           <TabPane tab="All Deals" key="2">
             <div
               style={{

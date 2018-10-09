@@ -4,7 +4,7 @@ export default class index extends Component {
   render() {
     return (
       <div className="appbar-main">
-        <h3>OfferBag</h3>
+        <h3 style={{ color: "white" }}>OfferBag</h3>
       </div>
     );
   }

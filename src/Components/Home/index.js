@@ -49,12 +49,14 @@ export default class index extends Component {
   render() {
     return (
       <div
-        className="common-body"
         style={{
           padding: "5px"
         }}
       >
-        <Tabs defaultActiveKey="1">
+        <Tabs
+          defaultActiveKey="1"
+          style={{ width: "100%", textAlign: "center" }}
+        >
           <TabPane
             tab="Deal of the Day"
             key="1"
@@ -72,36 +74,47 @@ export default class index extends Component {
               />
             ))} */}
           </TabPane>
-          <TabPane
-            tab="All Deals"
-            key="2"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              flexWrap: "wrap"
-            }}
-          >
-            {this.state.empty ? (
-              <div style={{ alignSelf: "center", marginTop: 20 }}>
-                <Spin />
-              </div>
-            ) : (
-              this.state.allOffers.map(item => (
-                <FkAll
-                  title={item.title}
-                  description={item.description}
-                  url={item.url}
-                  imageurl={item.imageUrls[0].url}
-                />
-              ))
-            )}
+          <TabPane tab="All Deals" key="2">
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                flexWrap: "wrap"
+              }}
+            >
+              {this.state.empty ? (
+                <div style={{ alignSelf: "center", marginTop: 20 }}>
+                  <Spin />
+                </div>
+              ) : (
+                this.state.allOffers.map(item => (
+                  <FkAll
+                    title={item.title}
+                    description={item.description}
+                    url={item.url}
+                    imageurl={item.imageUrls[0].url}
+                  />
+                ))
+              )}
+            </div>
           </TabPane>
           <TabPane tab="Shop by Shop" key="3">
-            {shops.map(item => (
-              <div className="Shop-card">
-                <img src={item.img} />
-              </div>
-            ))}
+            <div
+              className="common-body"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center"
+              }}
+            >
+              {shops.map(item => (
+                <div className="Shop-card">
+                  <img src={item.img} />
+                </div>
+              ))}
+            </div>
           </TabPane>
           <TabPane tab="Coupons" key="4">
             Content of Tab Pane 3

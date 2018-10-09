@@ -6,6 +6,7 @@ export default class index extends Component {
       <div
         className="OfferCard-main"
         style={{
+          maxWidth: "360px",
           width: "100%",
           minHeight: "40px",
           height: "auto",
@@ -14,7 +15,8 @@ export default class index extends Component {
           justifyContent: "space-around",
           alignItems: "center",
           padding: "10px",
-          marginBottom: "10px"
+          marginBottom: "10px",
+          marginRight: 5
         }}
       >
         {" "}

@@ -147,13 +147,22 @@ export default class index extends Component {
             </div>
           </TabPane> */}
           <TabPane tab="Coupons" key="4">
-            {offers.map(item => (
-              <OfferCard
-                logo={item.logo}
-                description={item.description}
-                code={item.code}
-              />
-            ))}
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                flexWrap: "wrap"
+              }}
+            >
+              {offers.map(item => (
+                <OfferCard
+                  logo={item.logo}
+                  description={item.description}
+                  code={item.code}
+                />
+              ))}
+            </div>
           </TabPane>
         </Tabs>
       </div>

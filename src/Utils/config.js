@@ -11,8 +11,7 @@ firebase.initializeApp(config);
 export const db = firebase.database();
 
 export const dealOfTheDay = "http://tweeter-cj.herokuapp.com/dod";
-export const allOffers =
-  "https://affiliate-api.flipkart.net/affiliate/offers/v1/all/json";
+export const allOffers = "http://tweeter-cj.herokuapp.com/all";
 
 export const headers = {
   "Fk-Affiliate-Id": "akshaycj9",

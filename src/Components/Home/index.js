@@ -1,65 +1,49 @@
 import React, { Component } from "react";
 import "./index.css";
-
+import { Link } from "react-router-dom";
 import CommonCard from "../CommonCard";
 import moment from "moment";
-import { dealOfTheDay, headers } from "../../Utils/config";
+import { dealOfTheDay, headers, allOffers } from "../../Utils/config";
+import { Tabs, Spin } from "antd";
+import Amazon from "../../Res/Amazon-Logo.jpg";
+import Flipkart from "../../Res/Flipkart.png";
+import FkAll from "../FlipkartAllOffersCard";
 
-const data = {
-  dotdList: [
-    {
-      title: "Just Rs. 249",
-      description: "Bluetooth selfie sticks",
-      url:
-        "http://dl.flipkart.com/dl/camera-accessories/smile-n-click~brand/pr?p%5B%5D=facets.price_range%255B%255D%3DBelow%2BRs.%2B1000&sid=jek%2C6l2&filterNone=true&offer=ns%3A10e40dc418&affid=keshav",
-      imageUrls: [
-        {
-          url:
-            "http://img.fkcdn.com/image/selfie-stick/z/u/7/h-s203-smile-n-click-original-imaeagh9yg8k2t8z.jpeg",
-          resolutionType: "default"
-        },
-        {
-          url:
-            "https://rukminim1.flixcart.com/image/200/200/selfie-stick/z/u/7/h-s203-smile-n-click-original-imaeagh9yg8k2t8z.jpeg?q=90",
-          resolutionType: "low"
-        },
-        {
-          url:
-            "https://rukminim1.flixcart.com/image/400/400/selfie-stick/z/u/7/h-s203-smile-n-click-original-imaeagh9yg8k2t8z.jpeg?q=90",
-          resolutionType: "mid"
-        },
-        {
-          url:
-            "https://rukminim1.flixcart.com/image/800/800/selfie-stick/z/u/7/h-s203-smile-n-click-original-imaeagh9yg8k2t8z.jpeg?q=90",
-          resolutionType: "high"
-        }
-      ],
-      availability: "LIVE"
-    }
-  ]
-};
+const TabPane = Tabs.TabPane;
+
+const shops = [{ link: "/flipkart", img: Amazon }, { img: Flipkart }];
+
 export default class index extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: [],
+      empty: true,
+      shops: [],
+      allOffers: []
     };
   }
 
   componentDidMount() {
     var that = this;
-    fetch(dealOfTheDay)
+    // fetch(dealOfTheDay)
+    //   .then(res => {
+    //     return res.json();
+    //   })
+    //   .then(data => {
+    //     that.setState({ data: data.dotdList });
+    //   })
+    //   .catch(err => {
+    //     console.log("err", err);
+    //   });
+    fetch(allOffers)
       .then(res => {
         console.log("res", res);
-
         return res.json();
       })
       .then(data => {
         console.log("data", data);
-        that.setState({ data: data.dotdList });
-      })
-      .catch(err => {
-        console.log("err", err);
+        that.setState({ allOffers: data.allOffersList, empty: false });
       });
   }
   render() {
@@ -67,23 +51,62 @@ export default class index extends Component {
       <div
         className="common-body"
         style={{
-          padding: "5px",
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap"
+          padding: "5px"
         }}
       >
-        {this.state.data.map(item => (
-          <CommonCard
-            title={item.title}
-            description={item.description}
-            url={item.url}
-            imageurl={item.imageUrls[0].url}
-            time={moment()
-              .endOf("day")
-              .fromNow()}
-          />
-        ))}
+        <Tabs defaultActiveKey="1">
+          <TabPane
+            tab="Deal of the Day"
+            key="1"
+            style={{ display: "flex", flexWrap: "wrap" }}
+          >
+            {/* {this.state.data.map(item => (
+              <CommonCard
+                title={item.title}
+                description={item.description}
+                url={item.url}
+                imageurl={item.imageUrls[0].url}
+                time={moment()
+                  .unix(item.endTime)
+                  .fromNow()}
+              />
+            ))} */}
+          </TabPane>
+          <TabPane
+            tab="All Deals"
+            key="2"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              flexWrap: "wrap"
+            }}
+          >
+            {this.state.empty ? (
+              <div style={{ alignSelf: "center", marginTop: 20 }}>
+                <Spin />
+              </div>
+            ) : (
+              this.state.allOffers.map(item => (
+                <FkAll
+                  title={item.title}
+                  description={item.description}
+                  url={item.url}
+                  imageurl={item.imageUrls[0].url}
+                />
+              ))
+            )}
+          </TabPane>
+          <TabPane tab="Shop by Shop" key="3">
+            {shops.map(item => (
+              <div className="Shop-card">
+                <img src={item.img} />
+              </div>
+            ))}
+          </TabPane>
+          <TabPane tab="Coupons" key="4">
+            Content of Tab Pane 3
+          </TabPane>
+        </Tabs>
       </div>
     );
   }

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./index.css";
 import { Carousel, Input } from "antd";
 import demo from "../../Res/demo.jpeg";
-import Company from "../../Res/images.png";
+import Company from "../../Res/Flipkart.png";
 export default class index extends Component {
   constructor(props) {
     super(props);

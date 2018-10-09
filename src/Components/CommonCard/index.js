@@ -1,16 +1,22 @@
 import React, { Component } from "react";
 import "./index.css";
 import demo from "../../Res/demo.jpeg";
-import logo from "../../Res/images.png";
+import logo from "../../Res/Flipkart.png";
 import { Link } from "react-router-dom";
 export default class index extends Component {
   render() {
     return (
       <div className="ProductCard1-main">
-        <div>
+        <div style={{ display: "flex", justifyContent: "center" }}>
           <img
             src={this.props.imageurl}
-            style={{ width: "100%", height: "150px" }}
+            style={{
+              width: "80%",
+
+              minHeight: "130px",
+              height: "fit-content",
+              maxHeight: "180px"
+            }}
           />
         </div>
         <div
@@ -37,7 +43,7 @@ export default class index extends Component {
         <div style={{ display: "flex", justifyContent: "space-around" }}>
           <div
             style={{
-              fontSize: "10px",
+              fontSize: "8px",
               textAlign: "center",
               color: "#000",
               width: "45%",
@@ -45,8 +51,8 @@ export default class index extends Component {
               border: "1px solid #00976F",
 
               borderRadius: "4px",
-              height: "26px",
-              paddingTop: "3px"
+              height: "27px",
+              padding: "2px"
             }}
           >
             expires <br /> {this.props.time}
@@ -62,7 +68,7 @@ export default class index extends Component {
 
               width: "45%",
               height: "27px",
-
+              border: "1px solid #00976F",
               padding: "1px",
               borderRadius: "4px",
               fontWeight: "bold",

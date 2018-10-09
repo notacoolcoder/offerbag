@@ -238,7 +238,9 @@ export default class index extends Component {
             >
               Featured
             </div>
-            <img src={c} style={{ width: "360px", height: "200px" }} />
+            <Link to="/bigbillion">
+              <img src={c} style={{ width: "360px", height: "200px" }} />
+            </Link>
             <img
               src={e}
               style={{ width: "360px", height: "200px", marginTop: "10px" }}

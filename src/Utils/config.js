@@ -10,8 +10,8 @@ var config = {
 firebase.initializeApp(config);
 export const db = firebase.database();
 
-export const dealOfTheDay = "http://tweeter-cj.herokuapp.com/dod";
-export const allOffers = "http://tweeter-cj.herokuapp.com/all";
+export const dealOfTheDay = "https://tweeter-cj.herokuapp.com/dod";
+export const allOffers = "https://tweeter-cj.herokuapp.com/all";
 
 export const headers = {
   "Fk-Affiliate-Id": "akshaycj9",

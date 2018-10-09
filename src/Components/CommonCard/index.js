@@ -52,7 +52,7 @@ export default class index extends Component {
 
               borderRadius: "4px",
               height: "27px",
-              padding: "2px"
+              paddingTop: "3px"
             }}
           >
             expires <br /> {this.props.time}
